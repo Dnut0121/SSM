@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/index.css" rel="stylesheet" type="text/css">
+  <link href="css/header.css" rel="stylesheet" type="text/css">
+  <title>신발 쇼핑몰</title>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">SSM</div>
+    <nav class="nav">
+      <a href="/">HOME</a>
+      <a href="#">STYLE</a>
+      <a href="#">SHOP</a>
+    </nav>
+    <div class="user-actions">
+      <a href="#">마이페이지</a>
+      <a href="#">관심</a>
+      <a href="#">찜</a>
+      <a href="/login">로그인</a>
+    </div>
+  </header>
+  
+  <div class="search-container">
+    <form class="search-form" action="/search" method="GET">
+      <input
+        type="text"
+        name="query"
+        class="search-input"
+        placeholder="검색어를 입력하세요..."
+        required
+      />
+      <button type="submit" class="search-button">
+        🔍
+      </button>
+    </form>
+	
+  </div>
+  <main class="main">
+    <div class="filters">
+      <div class="filter-item">운동화</div>
+      <div class="filter-item">아웃도어</div>
+      <div class="filter-item">러닝화</div>
+      <div class="filter-item">샌들</div>
+      <!-- Add more filter items as needed -->
+    </div>
+
+    <div class="product-list">
+      <div class="product">
+        <img src="shoe1.jpg" alt="Jordan 신발">
+        <h3>Jordan x Travis Scott</h3>
+        <p>386,000원</p>
+      </div>
+      <div class="product">
+        <img src="shoe2.jpg" alt="Nike 신발">
+        <h3>Nike Air Force 1</h3>
+        <p>108,000원</p>
+      </div>
+      <div class="product">
+        <img src="shoe3.jpg" alt="Adidas 신발">
+        <h3>Adidas Stadt Grey</h3>
+        <p>58,000원</p>
+      </div>
+	  <div class="product">
+	    <img src="shoe2.jpg" alt="Nike 신발">
+	    <h3>Nike Air Force 1</h3>
+	    <p>108,000원</p>
+	  </div>
+	  <div class="product">
+	    <img src="shoe2.jpg" alt="Nike 신발">
+	    <h3>Nike Air Force 1</h3>
+	    <p>108,000원</p>
+	  </div>
+	  <div class="product">
+	    <img src="shoe2.jpg" alt="Nike 신발">
+	    <h3>Nike Air Force 1</h3>
+	    <p>108,000원</p>
+	  </div>
+      <!-- Add more products -->
+    </div>
+  </main>
+</body>
+</html>
