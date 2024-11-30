@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/index.css" rel="stylesheet" type="text/css">
+  <link href="css/header.css" rel="stylesheet" type="text/css">
+  <title>신발 쇼핑몰</title>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">SSM</div>
+    <nav class="nav">
+      <a href="/">HOME</a>
+      <a href="#">STYLE</a>
+      <a href="#">SHOP</a>
+    </nav>
+    <div class="user-actions">
+      <a href="#">마이페이지</a>
+      <a href="#">관심</a>
+      <a href="#">찜</a>
+      <a href="/login">로그인</a>
+    </div>
+  </header>
+  
+  <div class="search-container">
+    <form class="search-form" action="/search" method="GET">
+      <input
+        type="text"
+        name="query"
+        class="search-input"
+        placeholder="검색어를 입력하세요..."
+        required
+      />
+      <button type="submit" class="search-button">
+        🔍
+      </button>
+    </form>
+	
+  </div>
+  <main class="main">
+    <div class="filters">
+      <div class="filter-item">운동화</div>
+      <div class="filter-item">아웃도어</div>
+      <div class="filter-item">러닝화</div>
+      <div class="filter-item">샌들</div>
+      <!-- Add more filter items as needed -->
+    </div>
+
+	<div class="product-list">
+	            <h2>상품 목록</h2>
+	            <div th:each="product : ${productList}">
+	                <div class="product">
+	                    <h3 th:text="${product.name}">상품명</h3>
+	                    <p th:text="'브랜드: ' + ${product.brand}">브랜드</p>
+	                    <p th:text="'카테고리: ' + ${product.category}">카테고리</p>
+	                    <p th:text="'가격: ' + ${product.price} + '원'">가격</p>
+	                    <p th:text="'출시일: ' + ${product.releaseDate}">출시일</p>
+	                </div>
+	            </div>
+	        </div>
+  </main>
+</body>
+</html>
