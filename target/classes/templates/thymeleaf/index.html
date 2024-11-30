@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/springsecurity6">
+<head>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,25 +21,24 @@
       <a href="#">마이페이지</a>
       <a href="#">관심</a>
       <a href="#">찜</a>
-      <a href="/login">로그인</a>
+	  <a href="/login" sec:authorize="isAnonymous()">로그인</a>
     </div>
   </header>
   
   <div class="search-container">
-    <form class="search-form" action="/search" method="GET">
-      <input
-        type="text"
-        name="query"
-        class="search-input"
-        placeholder="검색어를 입력하세요..."
-        required
-      />
-      <button type="submit" class="search-button">
-        🔍
-      </button>
-    </form>
-	
+      <form class="search-form" action="/search" method="GET">
+          <input
+              type="text"
+              name="query"
+              class="search-input"
+			  th:value="${searchQuery}" 
+			  />
+          <button type="submit" class="search-button">
+              🔍
+          </button>
+      </form>
   </div>
+  
   <main class="main">
     <div class="filters">
       <div class="filter-item">운동화</div>
@@ -48,7 +49,14 @@
     </div>
 
 	<div class="product-list">
+		
 	            <h2>상품 목록</h2>
+				
+				<!-- 검색 결과가 없을 경우 -->
+				<div th:if="${#lists.isEmpty(productList)}">
+				     <p>검색 결과가 없습니다.</p>
+				</div>
+				<!-- 검색 결과가 있을 경우 -->
 	            <div th:each="product : ${productList}">
 	                <div class="product">
 	                    <h3 th:text="${product.name}">상품명</h3>

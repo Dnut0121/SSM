@@ -12,7 +12,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "shoes")
-public class shoes {
+public class Shoes {
 	@Id
 	public String sSeq;
 	

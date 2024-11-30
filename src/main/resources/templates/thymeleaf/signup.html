@@ -28,22 +28,22 @@
      <div class="logo">
        <h1>SSM</h1>
      </div>
-     <form class="signup-form">
+	 <form class="signup-form" action="/signup" method="post">
        <div class="input-group">
          <label for="email">이메일 주소</label>
-         <input type="email" id="email" placeholder="예) ssm@ssm.co.kr" required>
+         <input type="email" id="id" name="id"placeholder="예) ssm@ssm.co.kr" required>
        </div>
        <div class="input-group">
          <label for="password">비밀번호</label>
-         <input type="password" id="password" placeholder="비밀번호" required>
+         <input type="password" id="pw" name="pw" placeholder="비밀번호" required>
        </div>
 	   <div class="input-group">
 	     <label for="password">주민번호 앞자리</label>
-	     <input type="text" id="birth" placeholder="입력하세요" required>
+	     <input type="text" id="rrn" name="rrn" placeholder="입력하세요" required>
 	   </div>
 	   <div class="input-group">
 	     <label for="password">신발사이즈</label>
-	     <input type="text" id="size" placeholder="선택하세요" required>
+	     <input type="text" id="size" name="size" placeholder="선택하세요" required>
 	   </div>
        <button type="submit" class="signup-btn">가입하기</button>
      </form>

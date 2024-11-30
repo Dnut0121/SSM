@@ -17,8 +17,7 @@ public class shoes_detail {
 	
 	@ManyToOne
 	@JoinColumn(name = "sSeq", nullable = false)
-	private shoes shoes;
-	
+	private Shoes shoes;
 	public int size;
 	public String color;
 	public int stock;

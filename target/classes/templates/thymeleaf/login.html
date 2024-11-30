@@ -24,30 +24,32 @@
     </div>
   </header>
   <main>
-  <div class="login-container">
-     <div class="logo">
-       <h1>SSM</h1>
-     </div>
-     <form class="login-form">
-       <div class="input-group">
-         <label for="email">이메일 주소</label>
-         <input type="email" id="email" placeholder="예) ssm@ssm.co.kr" required>
-       </div>
-       <div class="input-group">
-         <label for="password">비밀번호</label>
-         <input type="password" id="password" placeholder="비밀번호" required>
-       </div>
-       <button type="submit" class="login-btn">로그인</button>
-     </form>
-     <div class="links">
-       <a href="/signup">이메일 가입</a>
-       <span>|</span>
-       <a href="#">이메일 찾기</a>
-       <span>|</span>
-       <a href="#">비밀번호 찾기</a>
-     </div>
-   </div>
-   </main>
+    <div class="login-container">
+      <div class="logo">
+        <h1>SSM</h1>
+      </div>
+      <form class="login-form" action="/login" method="post"> <!-- 로그인 처리 경로 -->
+        <div class="input-group">
+          <label for="email">이메일 주소</label>
+          <input type="email" id="email" name="username" placeholder="예) ssm@ssm.co.kr" required>
+          <!-- name="username" 은 Spring Security에서 기본 사용자명 매핑 -->
+        </div>
+        <div class="input-group">
+          <label for="password">비밀번호</label>
+          <input type="password" id="password" name="password" placeholder="비밀번호" required>
+          <!-- name="password" 은 Spring Security에서 기본 비밀번호 매핑 -->
+        </div>
+        <button type="submit" class="login-btn">로그인</button>
+      </form>
+      <div class="links">
+        <a href="/signup">이메일 가입</a>
+        <span>|</span>
+        <a href="#">이메일 찾기</a>
+        <span>|</span>
+        <a href="#">비밀번호 찾기</a>
+      </div>
+    </div>
+  </main>
    <footer class="footer">
      <div class="footer-container">
        <div class="footer-section">
