@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/header.css" rel="stylesheet" type="text/css">
+    <link href="css/footer.css" rel="stylesheet" type="text/css">
+    <link href="css/detail.css" rel="stylesheet" type="text/css">
+    <title>상품 디테일</title>
+</head>
+<body>
+    <!-- 헤더 유지 -->
+    <header class="header">
+        <div class="logo">SSM</div>
+        <nav class="nav">
+            <a href="/">HOME</a>
+            <a href="#">STYLE</a>
+            <a href="#">SHOP</a>
+        </nav>
+        <div class="user-actions">
+            <a href="#">마이페이지</a>
+            <a href="#">관심</a>
+            <a href="#">찜</a>
+            <a href="/login">로그인</a>
+        </div>
+    </header>
+    
+    <!-- 상품 디테일 -->
+    <main class="detail-container">
+        <div class="product-image">
+            <img src="/images/sample-product.png" alt="상품 이미지" id="product-image">
+        </div>
+		<div class="product-details">
+		            <h1 th:text="${product.name}">상품 이름</h1>
+		            <p th:text="'브랜드: ' + ${product.brand}">브랜드</p>
+		            <p th:text="'카테고리: ' + ${product.category}">카테고리</p>
+		            <p th:text="'가격: ' + ${product.price} + '원'">가격</p>
+            <div class="select-group">
+                <label for="size-select">사이즈:</label>
+                <select id="size-select">
+                    <option value="250">250</option>
+                    <option value="260">260</option>
+                    <option value="270">270</option>
+                    <option value="280">280</option>
+                    <option value="290">290</option>
+                </select>
+            </div>
+            
+            <div class="select-group">
+                <label for="color-select">색상:</label>
+                <select id="color-select">
+                    <option value="black">검은색</option>
+                    <option value="white">흰색</option>
+                </select>
+            </div>
+            
+            <button class="buy-button">구매하기</button>
+        </div>
+    </main>
+</body>
+</html>

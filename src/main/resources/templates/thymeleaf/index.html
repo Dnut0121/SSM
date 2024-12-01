@@ -47,26 +47,21 @@
       <div class="filter-item">샌들</div>
       <!-- Add more filter items as needed -->
     </div>
-
 	<div class="product-list">
-		
-	            <h2>상품 목록</h2>
-				
+		<h2>상품 목록</h2>					
 				<!-- 검색 결과가 없을 경우 -->
-				<div th:if="${#lists.isEmpty(productList)}">
-				     <p>검색 결과가 없습니다.</p>
-				</div>
-				<!-- 검색 결과가 있을 경우 -->
-	            <div th:each="product : ${productList}">
-	                <div class="product">
-	                    <h3 th:text="${product.name}">상품명</h3>
-	                    <p th:text="'브랜드: ' + ${product.brand}">브랜드</p>
-	                    <p th:text="'카테고리: ' + ${product.category}">카테고리</p>
-	                    <p th:text="'가격: ' + ${product.price} + '원'">가격</p>
-	                    <p th:text="'출시일: ' + ${product.releaseDate}">출시일</p>
-	                </div>
-	            </div>
-	        </div>
+			<div th:if="${#lists.isEmpty(productList)}">
+				<p>검색 결과가 없습니다.</p>
+			</div>		
+			<div th:each="product : ${productList}">
+			        <div class="product">
+			            <h3 th:text="${product.name}">상품명</h3>
+			            <p th:text="'브랜드: ' + ${product.brand}">브랜드</p>
+			            <p th:text="'카테고리: ' + ${product.category}">카테고리</p>
+			            <a th:href="@{/product-detail(id=${product.sSeq})}" class="detail-link">상세보기</a>
+			</div>
+		</div>
+	</div>
   </main>
 </body>
 </html>
