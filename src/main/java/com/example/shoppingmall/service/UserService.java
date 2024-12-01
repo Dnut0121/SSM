@@ -31,4 +31,16 @@ public class UserService {
                 .map(user -> passwordEncoder.matches(rawPassword, user.getPw())) // 비밀번호 검증
                 .orElse(false);
     }
+    
+    
+    // 사용자 정보 가져오기
+    public User getUserById(String id) {
+        return userRepository.findById(id).orElse(null); // 사용자 ID로 조회
+    }
+
+    // 사용자 정보 수정
+    public void updateUser(User user) {
+        userRepository.save(user); // 수정된 사용자 정보 저장
+    }
+
 }

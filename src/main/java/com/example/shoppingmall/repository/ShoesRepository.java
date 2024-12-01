@@ -13,4 +13,8 @@ public interface ShoesRepository extends JpaRepository<Shoes, String> {
 
     // 대소문자 구분 없이 이름에 검색어가 포함된 제품을 찾는 메서드
     List<Shoes> findByNameContainingIgnoreCase(String name);
+    
+    List<Shoes> findByCategory(String category);
+    
+    List<Shoes> findByCategoryAndNameContainingIgnoreCase(String category, String query);
 }

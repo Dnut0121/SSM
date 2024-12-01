@@ -9,6 +9,7 @@ body {
   display: flex;
   padding: 10px 20px;
   background-color: #f8f8f8;
+   gap: 10px;
 }
 
 .filter-item {
@@ -19,11 +20,29 @@ body {
   cursor: pointer;
 }
 
-.product-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
+.filter-btn {
+    background-color: #d3d3d3; /* 회색 배경 */
+    color: #333; /* 글자 색 */
+    border: 1px solid #ccc; /* 테두리 색 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    padding: 10px 20px; /* 여백 */
+    cursor: pointer; /* 클릭 가능 표시 */
+    transition: background-color 0.3s, transform 0.2s; /* 배경색과 변환 효과 */
+}
+
+.filter-btn:hover {
+    background-color: #a9a9a9; /* 마우스 오버 시 어두운 회색 */
+    transform: scale(1.05); /* 크기 살짝 키우기 */
+}
+
+.filter-btn:active {
+    background-color: #808080; /* 클릭 시 더 어두운 회색 */
+}
+
+#product-list {
+    display: flex;
+    flex-wrap: wrap; /* 화면 너비에 맞게 아이템을 자동으로 줄바꿈 */
+    gap: 20px; /* 각 상품 간의 간격 */
 }
 
 .product {
@@ -146,4 +165,10 @@ body {
 
 .product-form-container button:hover {
   background: #555;
+}
+
+
+.filter-btn.selected {
+    background-color: #4CAF50; /* 버튼 색상을 녹색으로 변경 */
+    color: white; /* 글자 색상 변경 */
 }
