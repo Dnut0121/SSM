@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/springsecurity6">
+<head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/index.css" rel="stylesheet" type="text/css">
+  <link href="css/header.css" rel="stylesheet" type="text/css">
+  <title>신발 쇼핑몰</title>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">SSM</div>
+    <nav class="nav">
+      <a href="/">HOME</a>
+      <a href="#">STYLE</a>
+      <a href="#">SHOP</a>
+    </nav>
+    <div class="user-actions">
+      <a href="/mypage">마이페이지</a>
+      <a href="#">관심</a>
+      <a href="#">찜</a>
+	  <a href="/login" sec:authorize="isAnonymous()">로그인</a>
+    </div>
+  </header>
+  
+  <div class="search-container">
+	<form id="search-form">
+	       <input type="text" id="search-input" placeholder="검색어를 입력하세요" />
+		   <button type="submit">
+              🔍
+          </button>
+      </form>
+  </div>
+  
+  <main class="main">
+	
+	<div class="filters">
+	    <button class="filter-btn" data-category="운동화">운동화</button>
+	    <button class="filter-btn" data-category="농구화">농구화</button>
+	    <button class="filter-btn" data-category="러닝화">러닝화</button>
+	    <button class="filter-btn" data-category="축구화">축구화</button>
+	</div>
+  
+	<div class="product-list">
+	    <h2>상품 목록</h2>
+	
+	    <!-- 검색 결과가 없을 경우 -->
+	    <div id="no-products" style="display:none;">
+	        <p>검색 결과가 없습니다.</p>
+	    </div>
+	
+	    <!-- 상품 목록 -->
+	    <div id="product-list"></div>
+	</div>
+	  
+  </main>
+  <script th:src="@{/js/index.js}" charset="utf-8"></script>
+  
+</body>
+</html>

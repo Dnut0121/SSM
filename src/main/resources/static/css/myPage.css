@@ -1,0 +1,162 @@
+/* 전체 컨테이너 */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 헤더 */
+h1 {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 사용자 정보 섹션 */
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.user-info p {
+    font-size: 18px;
+    color: #555;
+}
+
+.user-info span {
+    font-weight: bold;
+}
+
+/* 수정 폼 */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container label {
+    font-size: 16px;
+    color: #333;
+}
+
+.form-container input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}
+
+/* 메시지 */
+.message, .error {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.message {
+    color: #4CAF50;
+}
+
+.error {
+    color: #e74c3c;
+}
+
+.purchase-history {
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.purchase-history h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.purchase-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.purchase-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.purchase-item:hover {
+    background-color: #f0f0f0;
+}
+
+.purchase-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1rem;
+    color: #555;
+}
+
+.product-name,
+.product-size,
+.product-color,
+.purchase-date {
+    font-weight: normal;
+}
+
+.product-name {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.product-size,
+.product-color {
+    font-size: 1rem;
+    color: #777;
+}
+
+.purchase-date {
+    font-size: 0.9rem;
+    color: #999;
+    text-align: right;
+}
+
+.purchase-info span {
+    padding: 0 10px;
+}

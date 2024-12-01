@@ -1,0 +1,182 @@
+.detail-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    width: 50%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    margin:auto;
+}
+
+
+
+/* 상품 박스 */
+.product-box {
+    display: flex; /* 가로 정렬 */
+    justify-content: space-between; /* 이미지와 텍스트를 양쪽에 배치 */
+    align-items: flex-start; /* 상단 정렬 */
+    width: 80%; /* 박스의 너비 */
+    gap: 20px; /* 이미지와 설명 사이 간격 */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+/* 이미지 영역 */
+.product-image {
+    flex: 1; /* 왼쪽 공간을 차지 */
+    max-width: 300px; /* 이미지 최대 너비 */
+    text-align: center;
+}
+
+
+.product-image img {
+	margin-top: 40px;
+	margin-right: 50px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    float: left;
+}
+
+/* 제품 상세 정보 영역 */
+.product-details {
+    flex: 2; /* 오른쪽 공간을 더 많이 차지 */
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+/* 옵션 선택 */
+.select-group {
+    display: flex; /* 가로 정렬 */
+    align-items: center; /* 라벨과 셀렉트 박스 정렬 */
+    gap: 10px; /* 라벨과 선택 박스 사이 간격 */
+    margin: 15px 0;
+}
+
+label {
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* 구매 버튼 */
+.buy-button {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 15%;
+    margin-left: 2%;
+}
+
+.buy-button:hover {
+    background-color: #555;
+}
+
+/* 리뷰 섹션 */
+.review-section {
+	margin-top : 3%;
+    width: 80%; /* 상품 설명 박스와 동일한 너비 */
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.review-list {
+    margin-bottom: 20px;
+}
+
+.review-box {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.review-box p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.review-box p strong {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.review-form-box {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.review-form-box h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.review-form-box textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.review-form-box select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.review-form-box button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review-form-box button:hover {
+    background-color: #555;
+}
+
+.review-box p span,
+.product-details p span {
+    color: gold;
+    font-size: 1.2rem;
+    margin-right: 2px;
+}
+
+.review-box p span:last-child,
+.product-details p span:last-child {
+    color: #333;
+    font-size: 1rem;
+    margin-left: 5px;
+}

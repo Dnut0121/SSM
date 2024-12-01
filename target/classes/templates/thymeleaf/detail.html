@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/header.css" rel="stylesheet" type="text/css">
+    <link href="css/footer.css" rel="stylesheet" type="text/css">
+    <link href="css/detail.css" rel="stylesheet" type="text/css">
+    <title>상품 디테일</title>
+</head>
+<body>
+    <!-- 헤더 유지 -->
+    <header class="header">
+        <div class="logo">SSM</div>
+        <nav class="nav">
+            <a href="/">HOME</a>
+            <a href="#">STYLE</a>
+            <a href="#">SHOP</a>
+        </nav>
+        <div class="user-actions">
+            <a href="#">마이페이지</a>
+            <a href="#">관심</a>
+            <a href="#">찜</a>
+        </div>
+    </header>
+    
+    <!-- 상품 디테일 -->
+    <main class="detail-container">
+		
+		
+        <div class="product-image">
+            <img th:src="@{'/images/' + ${product.name} + '.png'}" alt="상품 이미지" id="product-image">
+			</div>
+		<div class="product-details">
+		    <h1 th:text="${product.name}">Adidas Superstar</h1>
+		    <p th:text="'브랜드: ' + ${product.brand}">브랜드: Adidas</p>
+		    <p th:text="'카테고리: ' + ${product.category}">카테고리: 운동화</p>
+		    <p th:text="'가격: ' + ${product.price} + '원'">가격: 100000원</p>
+			</div>
+            <div class="select-group">
+                <label for="size-select">사이즈:</label>
+                <select id="size-select">
+                    <option value="250">250</option>
+                    <option value="260">260</option>
+                    <option value="270">270</option>
+                    <option value="280">280</option>
+                    <option value="290">290</option>
+                </select>
+            
+            <div class="select-group">
+                <label for="color-select">색상:</label>
+                <select id="color-select">
+                    <option value="black">검은색</option>
+                    <option value="white">흰색</option>
+                </select>
+            </div>
+            <button class="buy-button">구매하기</button>
+        </div>
+		<!-- 리뷰 작성 및 목록 -->
+		    <div class="review-section">
+		        <h2>리뷰</h2>
+		
+		        <!-- 기존 리뷰 목록 -->
+		        <div th:each="review : ${reviews}" class="review-box">
+				    <p><strong th:text="${review.username}">작성자</strong></p>
+				    <p th:text="'별점: ' + ${review.rating} + '점'"></p>
+				    <p th:text="${review.content}">리뷰 내용</p>
+				    
+				    <!-- 현재 로그인된 사용자와 리뷰 작성자가 동일한 경우 삭제 버튼 표시 -->
+				    <div th:if="${review.username == #authentication.name}">
+				        <form action="/delete-review" method="post">
+				            <input type="hidden" name="reviewId" th:value="${review.rSeq}">
+				            <button type="submit">삭제</button>
+				        </form>
+				    </div>
+				</div>
+
+		
+		        <!-- 리뷰 작성 폼 -->
+		        <div class="review-form-box">
+		            <h3>리뷰 작성</h3>
+		            <form action="/add-review" method="post">
+		                <input type="hidden" name="productId" th:value="${product.sSeq}">
+		                <textarea name="content" placeholder="리뷰를 작성하세요" required></textarea>
+		                <label for="rating">별점:</label>
+		                <select name="rating" id="rating" required>
+		                    <option value="1">1점</option>
+		                    <option value="2">2점</option>
+		                    <option value="3">3점</option>
+		                    <option value="4">4점</option>
+		                    <option value="5">5점</option>
+		                </select>
+		                <button type="submit">저장</button>
+		            </form>
+		        </div>
+		    </div>
+    </main>
+	<script th:src="@{/js/detail.js}" charset="utf-8"></script>
+</body>
+</html>
